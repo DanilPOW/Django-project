@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            background-color: #f1f1f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 10rem;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: #666;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        a {
+            font-size: 1.2rem;
+            color: #35414e;
+            text-decoration: none;
+            border: 1px solid #293440;
+            padding: 12px 24px;
+            border-radius: 25px;
+            margin-top: 40px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #3f4e5e;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container fade-in">
+    <h1>404</h1>
+    <p>Упс! Страница не найдена.</p>
+    <a href="{% url 'home' %}">Вернуться на главную</a>
+</div>
+
+</body>
+</html>

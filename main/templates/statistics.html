@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Общая статистика</h2>
+
+    <h3 class="media-title">Динамика уровня зарплат по годам</h3>
+    <div class="stats-plot">
+        <img class="stats-image" alt="График уровня зарплат по годам" src="{{ salary_plot }}">
+    </div>
+
+    <h3 class="media-title">Таблица уровня зарплат по годам</h3>
+    <div class="stats-table-wrapper">
+        <div class="stats-table">
+            {{ salary_table|safe }}
+        </div>
+    </div>
+
+    <h3 class="media-title">Динамика количества вакансий по годам</h3>
+    <div class="stats-plot">
+        <img class="stats-image" alt="График количества вакансий по годам" src="{{ vacancies_plot }}">
+    </div>
+
+    <h3 class="media-title">Таблица количества вакансий по годам</h3>
+    <div class="stats-table-wrapper">
+        <div class="stats-table">
+            {{ vacancies_table|safe }}
+        </div>
+    </div>
+
+    <h3 class="media-title">Уровень зарплат по городам</h3>
+    <div class="stats-plot">
+        <img class="stats-image" alt="Уровень зарплат по городам" src="{{ city_salary_plot }}">
+    </div>
+
+    <h3 class="media-title">Таблица уровня зарплат по городам</h3>
+    <div class="stats-table-wrapper">
+        <div class="stats-table">
+            {{ city_salary_table|safe }}
+        </div>
+    </div>
+
+    <h3 class="media-title">Доля вакансий по городам</h3>
+    <div class="stats-plot">
+        <img class="stats-image" alt="Доля вакансий по городам" src="{{ city_vacancies_plot }}">
+    </div>
+
+    <h3 class="media-title">Таблица доли вакансий по городам</h3>
+    <div class="stats-table-wrapper">
+        <div class="stats-table">
+            {{ city_vacancies_table|safe }}
+        </div>
+    </div>
+
+    <h3 class="media-title">ТОП-20 навыков по годам</h3>
+    <div class="stats-plot">
+        <img class="stats-image" alt="График топ 20 навыков по годам" src="{{ skills_plot }}">
+    </div>
+
+    <h3 class="media-title">Таблица навыков</h3>
+    <div class="stats-table-wrapper">
+        <div class="stats-table">
+            {{ skills_table|safe }}
+        </div>
+    </div>
+{% endblock %}

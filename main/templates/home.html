@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <h2>Главная страница</h2>
+    <div class="profession-description">
+        <p>
+            {% for context in context %}
+                {{ context.title|safe }}
+            {% endfor %}
+        </p>
+        <div id="description">
+            <p>
+                {% for context in context %}
+                    {{ context.description|safe }}
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+    <div class="image-gallery">
+        {% for context in context %}
+            <div class="gallery-item">
+                <img src="{{ context.image.url }}" alt="">
+            </div>
+            {% for img in context.additional_images.all %}
+                <div class="gallery-item">
+                    <img src="{{ img.image.url }}" alt="">
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+
+    <div id="image-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <img id="modal-image" src="" alt="">
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

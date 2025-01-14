@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>География</h2>
+
+    <h3 class="media-title">Динамика уровня зарплат по городам для профессии {{ PROFESSION_NAME }}</h3>
+    <div class="stats-plot">
+        <img class="stats-image" alt="" src="{{ graph_salary_level_by_city }}">
+    </div>
+
+    <h3 class="media-title">Таблица динамики зарплат по городам для профессии {{ PROFESSION_NAME }}</h3>
+    <div class="stats-table-wrapper">
+        <div class="stats-table">
+            {{ level_by_city_table|safe }}
+        </div>
+    </div>
+
+    <h3 class="media-title">Динамика доли вакансий по городам для профессии {{ PROFESSION_NAME }}</h3>
+    <div class="stats-plot">
+        <img class="stats-image" alt="" src="{{ graph_vacancy_fraction_by_city }}">
+    </div>
+
+    <h3 class="media-title">Таблица доли вакансий по городам для профессии {{ PROFESSION_NAME }}</h3>
+    <div class="stats-table-wrapper">
+        <div class="stats-table">
+            {{ fraction_by_city_table|safe }}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ SITE_NAME }}</title>
+    <link rel="stylesheet" href=".././static/css/style.css">
+</head>
+<body>
+<header>
+    <h1>{{ SITE_NAME }}</h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Главная</a></li>
+            <li>
+                <a href="#">Статистика</a>
+                <ul>
+                    <li><a href="{% url 'statistics' %}">Общая статистика</a></li>
+                    <li><a href="{% url 'demand' %}">Востребованность</a></li>
+                    <li><a href="{% url 'geography' %}">География</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'skills' %}">Навыки</a></li>
+            <li><a href="{% url 'latest_jobs' %}">Последние вакансии</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div>
+    {% block content %}{% endblock %}
+    {% block extra_js %}{% endblock %}
+</div>
+<footer>
+    <p>{{ FCs }}, {{ ACADEMIC_GROUP }}</p>
+</footer>
+</body>
+</html>

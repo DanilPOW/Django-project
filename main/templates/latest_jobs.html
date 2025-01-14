@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="vacancies-container">
+        <h2>Последние вакансии (за последние 24 часа)</h2>
+        <ul class="vacancies-list">
+            {% for vacancy in vacancies %}
+                <li class="vacancy-item">
+                    <h3>{{ vacancy.name }}</h3>
+                    <p><strong>Компания:</strong> {{ vacancy.company }}</p>
+                    <p><strong>Описание:</strong> {{ vacancy.description|default:"Отсутсвует" }}</p>
+                    <p><strong>Навыки:</strong> {{ vacancy.skills|default:"Навыки не указаны" }}</p>
+                    <p><strong>Оклад:</strong>
+                        {% if vacancy.salary %}
+                            {{ vacancy.salary }} руб.
+                        {% else %}
+                            Не указан
+                        {% endif %}
+                    </p>
+                    <p><strong>Регион:</strong> {{ vacancy.region }}</p>
+                    <p><strong>Дата публикации:</strong> {{ vacancy.published_at }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
